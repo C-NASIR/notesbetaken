@@ -5,6 +5,8 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Paper from "@material-ui/core/Paper";
+import { Hidden } from "@material-ui/core";
 
 //course styles
 const useStyles = makeStyles((theme) => ({
@@ -36,6 +38,13 @@ const useStyles = makeStyles((theme) => ({
   },
   expansionPanelSummary: {
     height: "5em",
+    [theme.breakpoints.down("xs")]: {
+      height: "auto",
+    },
+  },
+  title: {
+    paddingTop: "1em",
+    paddingBottom: "1em",
   },
 }));
 
@@ -43,7 +52,14 @@ const Course = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {props.data.map((course) => (
+      <Hidden mdUp>
+        <Paper>
+          <Typography variant="h5" align="center" className={classes.title}>
+            {props.course.name}
+          </Typography>
+        </Paper>
+      </Hidden>
+      {props.course.notes.map((course) => (
         <ExpansionPanel
           classes={{ root: classes.expansionPanel }}
           key={course.id}

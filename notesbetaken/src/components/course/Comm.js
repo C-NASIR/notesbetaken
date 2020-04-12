@@ -2,7 +2,7 @@ import React from "react";
 import Course from "./Course";
 import { connect } from "react-redux";
 const Comm = (props) => {
-  return <Course data={props.data} />;
+  return <Course course={props.data} />;
 };
 
 const mapStateToProps = (state) => {
