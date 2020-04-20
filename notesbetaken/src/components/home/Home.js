@@ -158,9 +158,16 @@ const Home = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    name: state.Economy.name,
+    definition: state.Economy.definition,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     setValue: (value) => dispatch({ type: "ASSIGN_VALUE", value: value }),
   };
 };
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

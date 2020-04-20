@@ -6,6 +6,7 @@ import Economy from "./course/Economy";
 import Comm from "./course/Comm";
 import Phyilosophy from "./course/Philosophy";
 import ReactJS from "./course/ReactJS";
+import CourseInput from "./Inputs/courseInput/CourseInput";
 //Import Other Staff
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/styles";
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/communication" component={Comm} />
           <Route exact path="/philosophy" component={Phyilosophy} />
           <Route exact path="/reactjs" component={ReactJS} />
+          <Route exact path="/addcourse" component={CourseInput} />
         </Switch>
       </Router>
     </ThemeProvider>

@@ -1,5 +1,7 @@
 const initialData = {
   name: "Title",
+  definition:
+    "onsumption of goods and services by different agents. Understood in its broadest sense, 'The economy is defined as a social domain that emphasize the practices, discourses, and material expressions associated with the",
   notes: [
     {
       id: 1,
@@ -55,5 +57,6 @@ export default function () {
       { name: "Philosophy", path: "/philosophy", activeIndex: 3 },
       { name: "React Js", path: "/reactjs", activeIndex: 4 },
     ],
+    value: 0,
   };
 }
